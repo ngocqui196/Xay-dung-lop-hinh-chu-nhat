@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="300"></canvas>
+<br>
+<script>
+
+     function Rectangle(width, weight) {
+        this.width = width;
+        this.height = weight;
+        this.getArea = function () {
+            return this.width * this.height;
+        }
+        this.getPerimeter = function () {
+            return (this.width + this.height) * 2;
+        }
+        this.setWideAndWeight = function (newWide, newWeight) {
+            this.width = newWide;
+            this.height = newWeight;
+        }
+    }
+    let HinhChuNhat = new Rectangle(200, 300);
+    let canvas = document.getElementById('myCanvas');
+    let context = canvas.getContext('2d');
+    context.beginPath(); // Bắt đầu vẽ
+    context.fillStyle = 'red';
+    context.fillRect(0, 0,HinhChuNhat.width, HinhChuNhat.height);
+    context.stroke();
+    console.log(HinhChuNhat)
+     document.write("Diện tích hình chữ nhật là:" + HinhChuNhat.getArea());
+
+
+
+</script>
+</body>
+</html>
